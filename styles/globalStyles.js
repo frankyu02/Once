@@ -1,4 +1,14 @@
+const { createGlobalStyle } = require("styled-components");
+
+const GlobgalStyles = createGlobalStyle`
 html,
+:root{
+  --Background: #f2f7f5;
+  --Headline: #00473e;
+  --Paragraph: #475d5b;
+  --Button: #faae2b;
+  --ButtonText: #00473e;
+}
 body {
   padding: 0;
   margin: 0;
@@ -24,3 +34,6 @@ a {
     background: black;
   }
 }
+`;
+
+export default GlobgalStyles;
