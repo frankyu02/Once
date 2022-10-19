@@ -1,6 +1,8 @@
-import Head from "next/head";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Header from "../Components/header";
+import Modal from "../Components/modal";
+import SEO from "../Components/SEO";
 
 const Wrapper = styled.div`
   border: 1px solid black;
@@ -9,19 +11,17 @@ const Wrapper = styled.div`
   background: var(--Background);
 `;
 export default function Home() {
+  const [show, setShow] = React.useState();
+  useEffect(() => {
+    setShow(localStorage.getItem("once_show_modal") ?? true);
+  }, []);
   return (
     <div>
-      <Head>
-        <title>Once - Frank Yu</title>
-        <meta
-          name="description"
-          content="If you can only post one thing a day, wouldn't it be the most meaningful thing you'll say all day?"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO />
       <Header />
+      {show === true && <Modal setShow={setShow} />}
       <main>
-        <Wrapper>a</Wrapper>
+        <Wrapper>contents go here </Wrapper>
       </main>
     </div>
   );
