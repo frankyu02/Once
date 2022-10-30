@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { AiFillGithub } from "react-icons/ai";
 
 const Wrapper = styled.div`
-  border: 1px solid black;
+  border-bottom: 1px solid var(--Headline);
   width: 100%;
   background: var(--Background);
   display: flex;
@@ -15,6 +15,11 @@ const Wrapper = styled.div`
   }
   a {
     font-size: 1.5rem;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      color: purple;
+      transform: scale(1.5);
+    }
   }
 `;
 export default function Header() {
