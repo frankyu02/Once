@@ -5,7 +5,6 @@ import Modal from "../Components/modal";
 import SEO from "../Components/SEO";
 
 const Wrapper = styled.div`
-  border: 1px solid black;
   width: 100vw;
   height: 100vh;
   background: var(--Background);
