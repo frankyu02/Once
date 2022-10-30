@@ -20,6 +20,7 @@ export default function Home() {
       <SEO />
       <Header />
       {show === true && <Modal setShow={setShow} />}
+      {/* <Modal setShow={setShow} /> */}
       <main>
         <Wrapper>contents go here </Wrapper>
       </main>
