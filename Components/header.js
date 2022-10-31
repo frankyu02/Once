@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import react from "react";
 import styled from "styled-components";
 import { AiFillGithub } from "react-icons/ai";
+import Head from "next/head";
 
 const Wrapper = styled.div`
   border-bottom: 1px solid var(--Headline);
@@ -12,6 +14,8 @@ const Wrapper = styled.div`
   justify-content: center;
   h1 {
     color: var(--Headline);
+    font-family: "Kolker Brush", cursive;
+    font-size: 50px;
   }
   a {
     font-size: 1.5rem;
@@ -24,15 +28,25 @@ const Wrapper = styled.div`
 `;
 export default function Header() {
   return (
-    <Wrapper>
-      <h1>Once</h1>
-      <a
-        href="https://github.com/frankyu02/Once"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <AiFillGithub />
-      </a>
-    </Wrapper>
+    <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <Wrapper>
+        <h1>Once</h1>
+        <a
+          href="https://github.com/frankyu02/Once"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AiFillGithub />
+        </a>
+      </Wrapper>
+    </>
   );
 }
