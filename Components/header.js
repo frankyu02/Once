@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import react from "react";
 import styled from "styled-components";
 import { AiFillGithub } from "react-icons/ai";
@@ -14,8 +13,8 @@ const Wrapper = styled.div`
   justify-content: center;
   h1 {
     color: var(--Headline);
-    font-family: "Kolker Brush", cursive;
     font-size: 50px;
+    font-family: "Xanh Mono", monospace;
   }
   a {
     font-size: 1.5rem;
@@ -29,14 +28,7 @@ const Wrapper = styled.div`
 export default function Header() {
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head></Head>
       <Wrapper>
         <h1>Once</h1>
         <a
