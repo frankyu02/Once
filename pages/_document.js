@@ -14,6 +14,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--Background);
 }
 
 a {
@@ -23,6 +24,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,7 +79,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
             href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap"
             rel="stylesheet"
