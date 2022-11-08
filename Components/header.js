@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 150px;
   h1 {
     color: var(--Headline);
     font-size: 50px;
@@ -28,7 +29,6 @@ const Wrapper = styled.div`
 export default function Header() {
   return (
     <>
-      <Head></Head>
       <Wrapper>
         <h1>Once</h1>
         <a
