@@ -3,12 +3,8 @@ import styled from "styled-components";
 import Header from "../Components/header";
 import Modal from "../Components/modal";
 import SEO from "../Components/SEO";
+import SignIn from "../Components/signInContainer";
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: var(--Background);
-`;
 export default function Home() {
   const [show, setShow] = React.useState();
   useEffect(() => {
@@ -19,9 +15,10 @@ export default function Home() {
       <SEO />
       <Header />
       {show === true && <Modal setShow={setShow} />}
-      {/* <Modal setShow={setShow} /> */}
       <main>
-        <Wrapper>contents go here </Wrapper>
+        <div className="container">
+          <SignIn />
+        </div>
       </main>
     </div>
   );
