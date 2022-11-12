@@ -4,22 +4,32 @@ import Header from "../Components/header";
 import Modal from "../Components/modal";
 import SEO from "../Components/SEO";
 import SignIn from "../Components/signInContainer";
+import { useAuthState } from "react-firebase-hooks/auth";
+import firebase from "../Firebase/clientApp";
 
 export default function Home() {
   const [show, setShow] = React.useState();
+  const [user, loading] = useAuthState(firebase.auth());
   useEffect(() => {
     setShow(localStorage.getItem("once_show_modal") ?? true);
   }, []);
   return (
     <div>
       <SEO />
-      <Header />
       {show === true && <Modal setShow={setShow} />}
-      <main>
-        <div className="container">
-          <SignIn />
-        </div>
-      </main>
+      {loading ? '' : //make loding animation later
+        <>
+          <Header />
+          <main>
+            {user ? ''
+              :
+              <div className="container">
+                <SignIn />
+              </div>
+            }
+          </main>
+        </>
+      }
     </div>
   );
 }
