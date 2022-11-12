@@ -29,14 +29,37 @@ const Wrapper = styled.div`
     }
   }
   .logOut {
+    display: flex;
     position: absolute;
-    right: 0;
-    border: 1px solid black;
+    right: 10px;
     height: 50px;
-    width: 100px;
+    width: 30%;
+    justify-content: flex-end;
+    .buttonDiv{
+      width: 40%;
+      display: flex;
+      //center
+      align-items: center;
+      justify-content: center;
+    }
     button{
-      height: 100%;
+      background: var(--Button);
+      border-radius: 5px;
+      border: none;
+      height: 80%;
       width: 100%;
+      color: var(--ButtonText);
+      &:hover {
+        cursor: pointer;
+        border: 1px solid black;
+      }
+    }
+    .userSummary{
+      display: flex;
+      margin-right: 10px;
+      img{
+        border-radius: 50%;
+      }
     }
   }
 `;
