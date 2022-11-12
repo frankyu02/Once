@@ -6,6 +6,7 @@ import SEO from "../Components/SEO";
 import SignIn from "../Components/signInContainer";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "../Firebase/clientApp";
+import ActualContent from "../Components/actualContent";
 
 export default function Home() {
   const [show, setShow] = React.useState();
@@ -21,12 +22,13 @@ export default function Home() {
         <>
           <Header />
           <main>
-            {user ? ''
-              :
-              <div className="container">
+            <div className="container">
+              {user ?
+                <ActualContent />
+                :
                 <SignIn />
-              </div>
-            }
+              }
+            </div>
           </main>
         </>
       }
