@@ -16,6 +16,7 @@ const Wrapper = styled.div`
     color: var(--Headline);
     font-size: 50px;
     font-family: "Xanh Mono", monospace;
+    margin: 0;
   }
   a {
     font-size: 1.5rem;
