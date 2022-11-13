@@ -1,7 +1,9 @@
 import react from "react";
 import styled from "styled-components";
 import { AiFillGithub } from "react-icons/ai";
-import Head from "next/head";
+import firebase from "../Firebase/clientApp";
+import HeaderSideBar from "./headerSideBar";
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Wrapper = styled.div`
   border-bottom: 1px solid var(--Headline);
@@ -12,6 +14,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 150px;
+  position: relative;
   h1 {
     color: var(--Headline);
     font-size: 50px;
@@ -26,8 +29,44 @@ const Wrapper = styled.div`
       transform: scale(1.5);
     }
   }
+  .logOut {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    height: 50px;
+    width: 30%;
+    justify-content: flex-end;
+    .buttonDiv{
+      width: 40%;
+      display: flex;
+      //center
+      align-items: center;
+      justify-content: center;
+    }
+    button{
+      background: var(--Button);
+      border-radius: 5px;
+      border: none;
+      height: 80%;
+      width: 100%;
+      color: var(--ButtonText);
+      &:hover {
+        cursor: pointer;
+        border: 1px solid black;
+      }
+    }
+    .userSummary{
+      display: flex;
+      margin-right: 10px;
+      img{
+        border-radius: 50%;
+      }
+    }
+  }
 `;
 export default function Header() {
+  const [user] = useAuthState(firebase.auth());
+  console.log(user);
   return (
     <>
       <Wrapper>
@@ -39,6 +78,7 @@ export default function Header() {
         >
           <AiFillGithub />
         </a>
+        {user ? <HeaderSideBar /> : ''}
       </Wrapper>
     </>
   );
