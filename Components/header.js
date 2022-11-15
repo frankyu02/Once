@@ -1,9 +1,9 @@
 import react from "react";
 import styled from "styled-components";
 import { AiFillGithub } from "react-icons/ai";
-import firebase from "../Firebase/clientApp";
 import HeaderSideBar from "./headerSideBar";
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../Firebase/clientApp";
 
 const Wrapper = styled.div`
   border-bottom: 1px solid var(--Headline);
@@ -36,14 +36,14 @@ const Wrapper = styled.div`
     height: 50px;
     width: 30%;
     justify-content: flex-end;
-    .buttonDiv{
+    .buttonDiv {
       width: 40%;
       display: flex;
       //center
       align-items: center;
       justify-content: center;
     }
-    button{
+    button {
       background: var(--Button);
       border-radius: 5px;
       border: none;
@@ -55,17 +55,17 @@ const Wrapper = styled.div`
         border: 1px solid black;
       }
     }
-    .userSummary{
+    .userSummary {
       display: flex;
       margin-right: 10px;
-      img{
+      img {
         border-radius: 50%;
       }
     }
   }
 `;
 export default function Header() {
-  const [user] = useAuthState(firebase.auth());
+  const [user] = useAuthState(auth);
   console.log(user);
   return (
     <>
@@ -78,7 +78,7 @@ export default function Header() {
         >
           <AiFillGithub />
         </a>
-        {user ? <HeaderSideBar /> : ''}
+        {user ? <HeaderSideBar /> : ""}
       </Wrapper>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "../Firebase/clientApp";
+import { firebase } from "../Firebase/clientApp";
 const Wrapper = styled.div`
   width: 100%;
   height: calc(100vh - 150px);

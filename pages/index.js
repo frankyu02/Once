@@ -5,12 +5,12 @@ import Modal from "../Components/modal";
 import SEO from "../Components/SEO";
 import SignIn from "../Components/signInContainer";
 import { useAuthState } from "react-firebase-hooks/auth";
-import firebase from "../Firebase/clientApp";
+import { auth, db } from "../Firebase/clientApp";
 import ActualContent from "../Components/actualContent";
 
 export default function Home() {
   const [show, setShow] = React.useState();
-  const [user, loading] = useAuthState(firebase.auth());
+  const [user, loading] = useAuthState(auth);
   useEffect(() => {
     setShow(localStorage.getItem("once_show_modal") ?? true);
   }, []);
@@ -18,20 +18,18 @@ export default function Home() {
     <div>
       <SEO />
       {show === true && <Modal setShow={setShow} />}
-      {loading ? '' : //make loding animation later
+      {loading ? (
+        "" //make loding animation later
+      ) : (
         <>
           <Header />
           <main>
             <div className="container">
-              {user ?
-                <ActualContent />
-                :
-                <SignIn />
-              }
+              {user ? <ActualContent /> : <SignIn />}
             </div>
           </main>
         </>
-      }
+      )}
     </div>
   );
 }
