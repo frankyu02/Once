@@ -102,12 +102,12 @@ export default function InputBox({ user }) {
         placeholder={
           canPost
             ? "Hey Lets make a post!"
-            : "Sorry, only one post is allowd per day!"
+            : "Sorry, only one post is allowed per day!"
         }
         className={canPost ? "" : "no-post-textbox"}
       />
       <button disabled={disabled} onClick={sendData}>
-        post
+        POST!
       </button>
     </Wrapper>
   );
