@@ -8,6 +8,7 @@ html,
   --Paragraph: #475d5b;
   --Button: #faae2b;
   --ButtonText: #00473e;
+  --IllustrationBackground: #ffa8ba;
 }
 body {
   padding: 0;
@@ -31,7 +32,7 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: var(--Background);
   }
 }
 `;
