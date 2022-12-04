@@ -7,7 +7,6 @@ export default function HeaderSideBar() {
     auth.signOut();
   };
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <div className="logOut">
       {user ? (
