@@ -4,7 +4,7 @@ import styled from "styled-components";
 import noPhoto from "../../assets/no-photos.png";
 const Wrapper = styled.section`
   width: 90%;
-  height: 20%;
+  height: max(20%, 140px);
   border-radius: 5px;
   color: var(--Paragraph);
   background-color: var(--IllustrationBackground);
@@ -28,6 +28,7 @@ const Wrapper = styled.section`
     h2 {
       margin: 0;
       color: var(--Header);
+      font-size: 1em;
     }
     p {
       margin: 0;
@@ -37,6 +38,9 @@ const Wrapper = styled.section`
   padding: 10px;
   margin-top: 15px;
   margin-bottom: 10px;
+  @media (max-width: 400px) {
+    height: 30%;
+  }
 `;
 export default function PostBox({ postInfo }) {
   const data = postInfo.data();
