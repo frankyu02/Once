@@ -25,7 +25,7 @@ export default function Home() {
           <Header />
           <main>
             <div className="container">
-              {user ? <ActualContent /> : <SignIn />}
+              {user ? <ActualContent user={user} /> : <SignIn />}
             </div>
           </main>
         </>
