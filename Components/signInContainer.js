@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--Background);
   .buttonContainer {
     width: 80%;
     height: 80%;
