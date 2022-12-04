@@ -5,7 +5,6 @@ import noPhoto from "../../assets/no-photos.png";
 const Wrapper = styled.section`
   width: 90%;
   height: 20%;
-  outline: 3px solid black;
   border-radius: 5px;
   color: var(--Paragraph);
   background-color: var(--IllustrationBackground);

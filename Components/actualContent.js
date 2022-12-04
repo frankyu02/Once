@@ -5,7 +5,6 @@ import PostsBox from "./Actual Content Coponents/posts";
 
 const Wrapper = styled.section`
   width: 100%;
-  outline: 5px solid green;
   height: calc(100vh - 150px);
   background: var(--Background);
 `;

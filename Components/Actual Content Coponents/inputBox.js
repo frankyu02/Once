@@ -13,8 +13,8 @@ import { useDocument } from "react-firebase-hooks/firestore";
 const Wrapper = styled.div`
   height: 10%;
   width: 100%;
-  outline: 5px solid purple;
   display: flex;
+  border: 2px solid var(--Paragraph);
   justify-content: space-around;
   align-items: center;
   input {
