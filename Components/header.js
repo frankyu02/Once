@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   a {
     font-size: 1.5rem;
     transition: 0.2s ease-in-out;
+    color: #6e5494;
     &:hover {
       color: purple;
       transform: scale(1.5);
@@ -66,7 +67,6 @@ const Wrapper = styled.div`
 `;
 export default function Header() {
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <>
       <Wrapper>
